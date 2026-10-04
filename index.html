@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Misión Reciclaje</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+</head>
+
+
+<body>
+
+    <div class="inicio">
+
+        <!-- PANTALLA DE PORTADA -->
+
+<div id="pantallaInicio">
+
+    <div class="portada">
+
+        <div class="icono-portada">
+            ♻️
+        </div>
+
+        <h1>Misión Reciclaje</h1>
+
+        <h2>¡Aprende a reciclar jugando!</h2>
+
+        <p>Una aventura educativa para ayudar al planeta.</p>
+
+<div class="mision-portada">
+
+    <h3>🌎 TU MISIÓN</h3>
+
+    <p>
+        Supera 3 desafíos, aprende a identificar los residuos
+        y descubre cómo el reciclaje puede ayudar a reducir
+        la contaminación.
+    </p>
+
+</div>
+
+<h3 class="reto-portada">🎯 ¿ESTÁS LISTO PARA EL RETO?</h3>
+
+<button onclick="mostrarIntroduccion()">🎮 COMENZAR</button>
+
+    </div>
+
+</div>
+
+
+<!-- PANTALLA DE INTRODUCCIÓN -->
+
+<div id="pantallaIntroduccion">
+
+    <div class="introduccion">
+
+        <div class="icono-introduccion">
+            🌎
+        </div>
+
+        <h1>¡Bienvenido a la misión!</h1>
+
+        <p>
+            La Tierra necesita tu ayuda.
+        </p>
+
+        <p>
+            Durante esta aventura tendrás que superar
+            diferentes desafíos, aprender sobre reciclaje
+            y descubrir cómo pequeñas acciones pueden
+            ayudar a cuidar nuestro planeta.
+        </p>
+
+
+        <div class="nombre-jugador">
+
+            <h3>👤 ¿CÓMO TE LLAMAS?</h3>
+
+            <input
+                type="text"
+                id="nombreJugador"
+                placeholder="Escribe tu nombre"
+                maxlength="20"
+            >
+
+        </div>
+
+
+        <div class="preparado">
+
+            <h2>🌱 ¿ESTÁS PREPARADO?</h2>
+
+            <p>
+                Tu decisión determinará cómo comenzará
+                tu aventura.
+            </p>
+
+            <div class="botones-preparado">
+
+                <button
+                    class="boton-si"
+                    onclick="aceptarMision()">
+                    ✅ SÍ
+                </button>
+
+                <button
+                    class="boton-no"
+                    onclick="rechazarMision()">
+                    ❌ NO
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- MAPA DE MISIONES -->
+    <div id="pantallaMapa">
+
+    <div class="mapa">
+
+        <div class="icono-mapa">
+            🗺️
+        </div>
+
+        <h1>Mapa de la misión</h1>
+
+        <p id="saludoJugador">
+            ¡Prepárate para comenzar tu aventura!
+        </p>
+
+        <div class="progreso">
+
+    <span>🌱 MISIÓN 1</span>
+
+    <div class="barra-progreso">
+    <div
+        class="progreso-actual"
+        id="barraProgreso">
+    </div>
+</div>
+
+    <span id="puntosJugador">0 puntos</span>
+
+</div>
+
+        <div class="niveles">
+
+            <div class="nivel activo">
+
+                <div class="numero-nivel">
+                    1
+                </div>
+
+                <div>
+                    <h3>🗑️ Clasifica los residuos</h3>
+
+                    <p>
+                        Aprende a identificar y clasificar
+                        diferentes tipos de residuos.
+                    </p>
+                </div>
+
+                <button onclick="comenzarJuego()">
+                    ▶ JUGAR
+                </button>
+
+            </div>
+
+
+            <div class="nivel bloqueado" id="nivel2">
+
+    <div class="numero-nivel">
+        2
+    </div>
+
+    <div>
+        <h3>🔎 Misión desconocida</h3>
+
+        <p>
+            ¿Qué habrá detrás de esta misión?
+        </p>
+    </div>
+
+    <span>🔒 BLOQUEADO</span>
+
+    <button
+        id="botonNivel2"
+        onclick="comenzarJuego2()"
+        style="display: none;">
+        ▶ JUGAR
+    </button>
+
+</div>
+
+
+           <div class="nivel bloqueado" id="nivel3">
+
+    <div class="numero-nivel">3</div>
+
+    <div>
+        <h3>❓ Misión desconocida</h3>
+        <p>Una nueva prueba te espera...</p>
+    </div>
+
+    <span>🔒 BLOQUEADO</span>
+
+    <button
+        id="botonNivel3"
+        onclick="comenzarJuego3()"
+        style="display: none;">
+        ▶ JUGAR
+    </button>
+
+</div>
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- NIVEL 1 -->
+<div id="juego" class="juego">
+
+    <h2>🗑️ Nivel 1: Clasifica los residuos</h2>
+
+    <p class="intro-nivel">
+        ¿Estás listo para comenzar?
+    </p>
+
+    <div class="explicacion-nivel">
+
+        <p>
+            En este reto tendrás que identificar diferentes
+            residuos y colocarlos en el lugar correcto.
+        </p>
+
+        <p>
+            🌱 <strong>Recuerda:</strong><br>
+            Los residuos pueden clasificarse según sus
+            características y la forma en que pueden
+            aprovecharse o desecharse.
+        </p>
+
+        <div class="objetivo-nivel">
+
+            <h3>🎯 OBJETIVO</h3>
+
+            <p>
+                Clasifica correctamente la mayor cantidad
+                de residuos y demuestra lo que sabes.
+            </p>
+
+        </div>
+
+    </div>
+
+    <h3 class="titulo-reto">
+        ⬇️ ¡COMIENZA EL RETO!
+    </h3>
+
+<div id="contenedorWordwall"></div>
+
+<button
+    class="boton-completar"
+    onclick="completarNivel1()">
+    🏆 TERMINÉ EL RETO
+</button>
+
+</div>
+
+<!-- NIVEL 2 -->
+<div id="juego2" class="juego">
+
+    <h2>🔎 Nivel 2: Une las parejas</h2>
+
+    <p class="intro-nivel">
+        Ahora tendrás que relacionar correctamente cada elemento.
+    </p>
+
+    <div class="explicacion-nivel">
+
+        <p>
+            En este reto tendrás que encontrar las parejas
+            correspondientes.
+        </p>
+
+        <p>
+            ♻️ <strong>Recuerda:</strong><br>
+            Separar y reconocer correctamente los residuos
+            es un paso importante para facilitar su reciclaje.
+        </p>
+
+        <div class="objetivo-nivel">
+
+            <h3>🎯 OBJETIVO</h3>
+
+            <p>
+                Encuentra todas las parejas correctamente
+                y demuestra lo que has aprendido.
+            </p>
+
+        </div>
+
+    </div>
+
+    <h3 class="titulo-reto">
+        ⬇️ ¡COMIENZA EL RETO!
+    </h3>
+
+    <div id="contenedorWordwall2"></div>
+
+    <button
+        class="boton-completar"
+        onclick="completarNivel2()">
+        🏆 TERMINÉ EL RETO
+    </button>
+
+</div>
+
+<!-- NIVEL 3 -->
+<div id="juego3" class="juego">
+
+    <h2>❓ Nivel 3: Pon a prueba tus conocimientos</h2>
+
+    <p class="intro-nivel">
+        Has llegado a una nueva misión.
+    </p>
+
+    <div class="explicacion-nivel">
+
+        <p>
+            En este reto tendrás que responder correctamente
+            una serie de preguntas sobre la contaminación,
+            los residuos y el reciclaje.
+        </p>
+
+        <p>
+            ♻️ <strong>Recuerda:</strong><br>
+            Cada respuesta te ayudará a demostrar cuánto
+            has aprendido durante las misiones anteriores.
+        </p>
+
+        <div class="objetivo-nivel">
+
+            <h3>🎯 OBJETIVO</h3>
+
+            <p>
+                Responde correctamente las preguntas y
+                demuestra tus conocimientos sobre el cuidado
+                del medio ambiente.
+            </p>
+
+        </div>
+
+    </div>
+
+    <h3 class="titulo-reto">
+        ⬇️ ¡COMIENZA EL RETO!
+    </h3>
+
+    <div id="contenedorWordwall3"></div>
+
+    <button
+        class="boton-completar"
+        onclick="completarNivel3()">
+        🏆 TERMINÉ EL RETO
+    </button>
+
+</div>
+
+<!-- PANTALLA FINAL -->
+<div id="pantallaFinal">
+
+    <div class="final">
+
+        <div class="icono-final">
+            🏆
+        </div>
+
+        <h1>¡MISIÓN COMPLETADA!</h1>
+
+        <h2 id="nombreFinal">
+            🎉 ¡Felicidades!
+        </h2>
+
+        <p class="mensaje-final">
+            Has completado todos los desafíos de
+            <strong>Misión Reciclaje</strong>.
+        </p>
+
+        <div class="mensaje-agradecimiento">
+
+            <p>
+                🌎 Gracias por participar y demostrar
+                que pequeñas acciones pueden hacer
+                una gran diferencia para nuestro planeta.
+            </p>
+
+            <p>
+                ♻️ Recuerda que separar correctamente
+                nuestros residuos y reciclar ayuda a
+                reducir la contaminación y cuidar
+                nuestro medio ambiente.
+            </p>
+
+        </div>
+
+        <div class="resultado-final">
+
+            <h3>🏆 RESULTADO FINAL</h3>
+
+            <p id="puntosFinal">
+                ⭐ 30 puntos
+            </p>
+
+        </div>
+
+        <p class="frase-final">
+            🌱 La misión termina aquí,
+            pero el compromiso continúa.
+        </p>
+
+        <button
+            class="boton-mapa-final"
+            onclick="regresarAlMapa()">
+            🗺️ REGRESAR AL MAPA
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

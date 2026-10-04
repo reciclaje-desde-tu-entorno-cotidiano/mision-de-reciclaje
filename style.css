@@ -1,0 +1,1710 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+body {
+    background: linear-gradient(135deg, #dcedc8, #e8f5e9, #b2dfdb);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.inicio {
+    width: 80%;
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 50px 40px;
+    min-height: 850px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   DECORACIÓN DE LA PORTADA
+========================= */
+
+.inicio::before {
+    content: "🌿";
+    position: absolute;
+    font-size: 90px;
+    top: 15px;
+    left: 20px;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.inicio::after {
+    content: "♻️";
+    position: absolute;
+    font-size: 100px;
+    bottom: 10px;
+    right: 20px;
+    opacity: 0.20;
+    pointer-events: none;
+}
+
+
+/* =========================
+   PANTALLA DE INICIO
+========================= */
+
+#pantallaInicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: white;
+    border-radius: 30px;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 50px 40px 70px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+
+    transition:
+        opacity 3s ease,
+        transform 3s ease,
+        filter 3s ease;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+    color: #1b5e20;
+    font-size: 58px;
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SUBTÍTULO
+========================= */
+
+h2 {
+    color: #2e7d32;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TEXTO
+========================= */
+
+p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BOTÓN PRINCIPAL
+========================= */
+
+button {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+
+
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+/* Efecto al pasar el mouse */
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 18px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Efecto al presionar */
+
+button:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================
+   JUEGO
+========================= */
+
+.juego {
+    margin-top: 40px;
+}
+
+.juego iframe {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .inicio {
+    width: 85%;
+    min-height: 700px;
+    margin: 30px auto;
+    padding: 30px 20px;
+}
+
+   #pantallaInicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: white;
+    border-radius: 30px;
+
+    z-index: 10;
+
+    box-sizing: border-box;
+    padding: 50px 40px 70px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        filter 1s ease;
+}
+}
+
+/* =========================
+   TRANSICIÓN DE DESINTEGRACIÓN
+========================= */
+
+#pantallaInicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: white;
+    border-radius: 30px;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 50px 40px;
+
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    transition:
+        opacity 3s ease,
+        transform 3s ease,
+        filter 3s ease;
+}
+
+#pantallaInicio.ocultar {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.08);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/* =========================
+   TARJETAS DE INFORMACIÓN
+========================= */
+
+fo-inicio {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 35px auto 45px;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+}
+
+
+.tarjeta-info {
+    background: #f1f8e9;
+    border: 2px solid #a5d6a7;
+    border-radius: 20px;
+
+    padding: 25px;
+    width: 45%;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.tarjeta-info:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+.tarjeta-info h3 {
+    color: #2e7d32;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+.tarjeta-info p {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BOTÓN SECUNDARIO
+========================= */
+
+.boton-secundario {
+    font-size: 16px;
+    padding: 12px 20px;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .info-inicio {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .tarjeta-info {
+        width: 100%;
+    }
+
+}
+
+/* =========================
+   PANTALLA DEL NIVEL 1
+========================= */
+
+.juego {
+    margin-top: 40px;
+    padding: 35px 25px;
+    background: #f7fff4;
+    border-radius: 25px;
+    border: 2px solid #c8e6c9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* TÍTULO DEL NIVEL */
+
+.juego h2 {
+    color: #1b5e20;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+/* INTRODUCCIÓN */
+
+.intro-nivel {
+    color: #388e3c;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* EXPLICACIÓN */
+
+.explicacion-nivel {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 18px;
+    border-left: 6px solid #43a047;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.explicacion-nivel p {
+    font-size: 17px;
+    margin: 10px 0;
+}
+
+
+/* OBJETIVO */
+
+.objetivo-nivel {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 15px;
+}
+
+
+.objetivo-nivel h3 {
+    color: #2e7d32;
+    margin-top: 0;
+}
+
+
+/* TÍTULO DEL RETO */
+
+.titulo-reto {
+    color: #1b5e20;
+    font-size: 22px;
+    margin: 25px 0 15px;
+}
+
+
+/* WORDWALL */
+
+.juego iframe {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   PANTALLA DE INTRODUCCIÓN
+========================= */
+
+#pantallaIntroduccion {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: white;
+    border-radius: 30px;
+
+    box-sizing: border-box;
+    padding: 50px 40px;
+
+    z-index: 9;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+#pantallaIntroduccion.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+
+/* Cuando aparece */
+
+#pantallaIntroduccion.mostrar {
+    opacity: 1;
+    transform: scale(1);
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   CONTENIDO DE INTRODUCCIÓN
+========================= */
+
+troduccion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+.icono-introduccion {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+
+.introduccion h1 {
+    margin-top: 10px;
+}
+
+
+.introduccion > p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   NOMBRE DEL JUGADOR
+========================= */
+
+.nombre-jugador {
+    margin: 30px auto;
+    padding: 25px;
+
+    background: #f1f8e9;
+
+    border-radius: 20px;
+
+    border: 2px solid #a5d6a7;
+}
+
+
+.nombre-jugador h3 {
+    color: #2e7d32;
+    font-size: 22px;
+}
+
+
+#nombreJugador {
+    width: 80%;
+    max-width: 400px;
+
+    padding: 14px 18px;
+
+    font-size: 18px;
+
+    border: 2px solid #a5d6a7;
+    border-radius: 12px;
+
+    outline: none;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+#nombreJugador:focus {
+    border-color: #43a047;
+}
+
+
+/* =========================
+   ¿ESTÁS PREPARADO?
+========================= */
+
+.preparado {
+    margin-top: 30px;
+}
+
+
+.preparado h2 {
+    margin-bottom: 10px;
+}
+
+
+.botones-preparado {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+
+.boton-si,
+.boton-no {
+    min-width: 130px;
+}
+
+
+.boton-si {
+    background: linear-gradient(135deg, #43a047, #2e7d32);
+}
+
+
+.boton-no {
+    background: linear-gradient(135deg, #757575, #424242);
+}
+
+
+/* =========================
+   ANIMACIÓN DE LA PORTADA
+========================= */
+
+#pantallaInicio {
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        filter 1s ease;
+}
+
+
+#pantallaInicio.ocultar {
+    opacity: 0;
+
+    transform: scale(1.08);
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   PANTALLA DEL MAPA
+   ========================= */
+
+#pantallaMapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: white;
+    border-radius: 30px;
+
+    box-sizing: border-box;
+    padding: 50px 40px;
+
+    z-index: 8;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: scale(0.95);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+#pantallaMapa.mostrar {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+/* =========================
+   DISEÑO DEL MAPA
+   ========================= */
+
+.mapa {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ICONO DEL MAPA */
+
+.icono-mapa {
+    font-size: 65px;
+    margin-bottom: 5px;
+}
+
+/* TÍTULO */
+
+.mapa h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #1b5e20;
+}
+
+.mapa > p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BARRA DE PROGRESO
+   ========================= */
+
+.progreso {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    padding: 18px 22px;
+
+    background: #f1f8e9;
+    border: 2px solid #a5d6a7;
+    border-radius: 18px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.progreso span {
+    color: #2e7d32;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* BARRA */
+
+.barra-progreso {
+    flex: 1;
+    height: 14px;
+
+    background: #c8e6c9;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progreso-actual {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #66bb6a,
+        #2e7d32
+    );
+
+    border-radius: 20px;
+}
+
+/* =========================
+   LISTA DE MISIONES
+   ========================= */
+
+.niveles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 90%;
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+/* TARJETA DE NIVEL */
+
+.nivel {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    text-align: left;
+}
+
+/* NIVEL ACTIVO */
+
+.nivel.activo {
+    background: #f1f8e9;
+    border: 3px solid #66bb6a;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.nivel.activo:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* NÚMERO DEL NIVEL */
+
+.numero-nivel {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #43a047;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* TEXTO DEL NIVEL */
+
+.nivel h3 {
+    margin: 0 0 5px;
+
+    color: #1b5e20;
+    font-size: 20px;
+}
+
+.nivel p {
+    margin: 0;
+
+    font-size: 15px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* BOTÓN DEL NIVEL */
+
+.nivel.activo button {
+    margin-left: auto;
+    margin-bottom: 0;
+
+    padding: 12px 20px;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+}
+
+/* =========================
+   NIVELES BLOQUEADOS
+   ========================= */
+
+.nivel.bloqueado {
+    background: #eeeeee;
+
+    border: 2px solid #bdbdbd;
+
+    opacity: 0.75;
+
+    filter: grayscale(30%);
+}
+
+.nivel.bloqueado .numero-nivel {
+    background: #9e9e9e;
+}
+
+.nivel.bloqueado h3 {
+    color: #616161;
+}
+
+.nivel.bloqueado p {
+    color: #757575;
+}
+
+.nivel.bloqueado span {
+    margin-left: auto;
+
+    color: #616161;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   AJUSTE DE LA INTRODUCCIÓN
+   ========================= */
+
+#pantallaIntroduccion {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.introduccion {
+    padding-bottom: 40px;
+}
+
+/* =========================
+   PANTALLA DEL JUEGO
+========================= */
+
+/* PANTALLA DEL NIVEL 1 */
+
+#juego {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 35px 25px;
+
+    box-sizing: border-box;
+
+    background: #f7fff4;
+    border-radius: 30px;
+    border: 2px solid #c8e6c9;
+
+    z-index: 5;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+
+    transform: scale(0.98);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* NIVEL 1 VISIBLE */
+
+#juego.mostrar {
+    display: block;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: scale(1);
+}
+
+
+/* CONTENEDOR DE WORDWALL */
+
+#contenedorWordwall {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* WORDWALL */
+
+#contenedorWordwall iframe {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+
+    border: none;
+    border-radius: 15px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* PRUEBA DE CONTENCIÓN */
+
+.inicio {
+    position: relative;
+    overflow: hidden;
+}
+
+#juego {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    box-sizing: border-box !important;
+}
+
+#juego .titulo-reto,
+#juego #contenedorWordwall {
+    position: relative;
+}
+
+/* OCULTAR COMPLETAMENTE LOS JUEGOS AL INICIAR */
+
+#juego,
+#juego2,
+#juego3 {
+    display: none !important;
+}
+
+/* MOSTRAR EL JUEGO SOLAMENTE CUANDO SE ACTIVA */
+
+#juego.mostrar,
+#juego2.mostrar,
+#juego3.mostrar {
+    display: block !important;
+}
+
+/* CORRECCIÓN DEL NIVEL DESBLOQUEADO */
+
+.nivel.activo {
+    position: relative;
+    padding-right: 190px;
+}
+
+.nivel.activo span {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    width: 145px;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.nivel.activo button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* PERMITIR DESPLAZAMIENTO EN EL MAPA */
+
+#pantallaMapa {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+}
+
+/* =========================
+   PANTALLA FINAL
+========================= */
+
+#pantallaFinal {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #f1f8e9,
+        #ffffff,
+        #e8f5e9
+    );
+
+    border-radius: 30px;
+
+    box-sizing: border-box;
+    padding: 50px 40px;
+
+    z-index: 7;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: scale(0.95);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* PANTALLA FINAL VISIBLE */
+
+#pantallaFinal.mostrar {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: scale(1);
+}
+
+
+/* =========================
+   CONTENIDO FINAL
+========================= */
+
+.final {
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ICONO DEL TROFEO */
+
+.icono-final {
+    font-size: 90px;
+
+    margin-bottom: 10px;
+
+    animation:
+        aparecerTrofeo 0.8s ease,
+        flotarTrofeo 2s ease-in-out 1s infinite;
+}
+
+
+/* TÍTULO FINAL */
+
+.final h1 {
+    color: #1b5e20;
+
+    font-size: 46px;
+
+    margin: 10px 0;
+
+    font-weight: bold;
+}
+
+
+/* NOMBRE DEL JUGADOR */
+
+#nombreFinal {
+    color: #2e7d32;
+
+    font-size: 30px;
+
+    margin: 10px 0 25px;
+}
+
+
+/* MENSAJE PRINCIPAL */
+
+.mensaje-final {
+    max-width: 600px;
+
+    font-size: 20px;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MENSAJES DE AGRADECIMIENTO
+========================= */
+
+.mensaje-agradecimiento {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 20px 25px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border: 2px solid #a5d6a7;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+.mensaje-agradecimiento p {
+    font-size: 17px;
+
+    margin: 12px 0;
+
+    color: #555;
+}
+
+
+/* =========================
+   RESULTADO FINAL
+========================= */
+
+.resultado-final {
+    width: 80%;
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+    background: #e8f5e9;
+
+    border: 3px solid #66bb6a;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.12);
+
+    box-sizing: border-box;
+}
+
+
+.resultado-final h3 {
+    color: #1b5e20;
+
+    font-size: 20px;
+
+    margin: 0 0 10px;
+}
+
+
+#puntosFinal {
+    color: #2e7d32;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin: 0;
+}
+
+
+/* =========================
+   FRASE FINAL
+========================= */
+
+.frase-final {
+    color: #388e3c;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin: 10px 0 25px;
+}
+
+
+/* =========================
+   BOTÓN REGRESAR AL MAPA
+========================= */
+
+.boton-mapa-final {
+    background: linear-gradient(
+        135deg,
+        #43a047,
+        #1b5e20
+    );
+
+    padding: 17px 35px;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.boton-mapa-final:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecerTrofeo {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes flotarTrofeo {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   ADAPTACIÓN PARA CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    #pantallaFinal {
+        padding: 40px 20px;
+    }
+
+
+    .icono-final {
+        font-size: 70px;
+    }
+
+
+    .final h1 {
+        font-size: 34px;
+    }
+
+
+    #nombreFinal {
+        font-size: 24px;
+    }
+
+
+    .mensaje-final {
+        font-size: 17px;
+    }
+
+
+    .mensaje-agradecimiento {
+        padding: 15px;
+    }
+
+
+    .mensaje-agradecimiento p {
+        font-size: 16px;
+    }
+
+
+    .resultado-final {
+        width: 95%;
+    }
+
+
+    #puntosFinal {
+        font-size: 27px;
+    }
+
+
+    .boton-mapa-final {
+        width: 90%;
+
+        padding: 15px 20px;
+
+        font-size: 17px;
+    }
+
+}
+
+/* ==========================================
+   CORRECCIÓN DEL MAPA EN CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    /* BARRA DE PROGRESO */
+
+    .progreso {
+        width: 100%;
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .progreso span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .barra-progreso {
+        width: 100%;
+        flex: none;
+        height: 14px;
+    }
+
+
+    /* LISTA DE NIVELES */
+
+    .niveles {
+        width: 100%;
+        gap: 15px;
+    }
+
+
+    /* TARJETAS */
+
+    .nivel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+
+    padding: 20px !important;
+    gap: 12px;
+}
+
+
+    /* NÚMERO */
+
+    .numero-nivel {
+    min-width: 45px;
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+}
+
+
+    /* TEXTO */
+
+    .nivel > div:nth-child(2) {
+        width: auto;
+        flex: 1;
+    }
+
+    .nivel h3 {
+        font-size: 19px;
+        margin: 0 0 8px;
+    }
+
+    .nivel p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+
+    /* QUITAR EL ESPACIO RESERVADO PARA EL BOTÓN */
+
+    .nivel.activo {
+        padding-right: 20px !important;
+    }
+
+
+    /* BOTÓN JUGAR */
+
+    .nivel.activo button {
+        position: static !important;
+
+        transform: none !important;
+
+        margin: 5px 0 0;
+
+        width: 80%;
+        max-width: 220px;
+
+        padding: 12px 20px;
+
+        font-size: 16px;
+    }
+
+
+    /* ESTADO DEL NIVEL BLOQUEADO */
+
+    .nivel.bloqueado span {
+        position: static;
+        margin: 5px 0 0;
+
+        font-size: 13px;
+    }
+
+}
+
+/* =========================
+   ADAPTACIÓN PARA TABLETS
+========================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .inicio {
+        width: 90%;
+        max-width: 850px;
+        padding: 35px 25px;
+    }
+
+    #contenedorWordwall,
+    #contenedorWordwall2,
+    #contenedorWordwall3 {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    #contenedorWordwall iframe,
+    #contenedorWordwall2 iframe,
+    #contenedorWordwall3 iframe {
+        width: 100%;
+        max-width: 500px;
+        height: 380px;
+    }
+
+}
+
+/* ==========================================
+   CORRECCIÓN FINAL DEL MAPA EN CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    /* TARJETA DEL NIVEL */
+
+    .nivel {
+        width: 100%;
+        display: grid;
+
+        grid-template-columns: 50px 1fr;
+
+        align-items: start;
+
+        text-align: left;
+
+        padding: 20px !important;
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* NÚMERO COMO VIÑETA */
+
+    .numero-nivel {
+        width: 45px;
+        min-width: 45px;
+        height: 45px;
+
+        margin: 0;
+
+        flex-shrink: 0;
+
+        font-size: 20px;
+    }
+
+
+    /* CONTENIDO DEL NIVEL */
+
+    .nivel > div:nth-child(2) {
+        width: auto;
+
+        min-width: 0;
+    }
+
+
+    .nivel h3 {
+        font-size: 18px;
+        line-height: 1.3;
+
+        margin: 0 0 8px;
+    }
+
+
+    .nivel p {
+        font-size: 15px;
+        line-height: 1.4;
+
+        margin: 0;
+    }
+
+
+    /* QUITAR EL ESPACIO DE LA VERSIÓN DE COMPUTADORA */
+
+    .nivel.activo {
+        padding-right: 20px !important;
+    }
+
+
+    /* BOTÓN JUGAR */
+
+    .nivel.activo button {
+        position: static !important;
+
+        transform: none !important;
+
+        grid-column: 2;
+
+        width: 90%;
+        max-width: 220px;
+
+        margin: 12px auto 0;
+
+        padding: 12px 15px;
+
+        font-size: 16px;
+    }
+
+
+    /* BLOQUEADO / DESBLOQUEADO */
+
+    .nivel.bloqueado span,
+    .nivel.activo span {
+        position: static !important;
+
+        grid-column: 2;
+
+        display: block;
+
+        width: 100%;
+
+        margin: 10px 0 0;
+
+        text-align: center;
+
+        font-size: 13px;
+    }
+
+}
+
+/* ==========================================
+   CORRECCIÓN DE ESTADO Y BOTÓN EN COMPUTADORA
+   ========================================== */
+
+@media (min-width: 601px) {
+
+    .nivel.activo {
+        position: relative;
+        padding-right: 190px;
+    }
+
+    .nivel.activo span {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        width: 145px;
+        text-align: center;
+        color: #2e7d32;
+        font-weight: bold;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .nivel.activo button {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-20%);
+        width: 145px;
+        margin: 0;
+        padding: 12px 15px;
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+}
+
+/* ==========================================
+   INFORMACIÓN EXTRA DE LA PORTADA
+   ========================================== */
+
+.mision-portada {
+    width: 85%;
+    max-width: 600px;
+    margin: 35px auto 25px;
+    padding: 20px 25px;
+    background: #f1f8e9;
+    border: 2px solid #c8e6c9;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.mision-portada h3 {
+    color: #2e7d32;
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.mision-portada p {
+    font-size: 17px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.reto-portada {
+    color: #388e3c;
+    font-size: 20px;
+    margin: 25px 0 5px;
+}
+
+@media (max-width: 600px) {
+
+    .mision-portada {
+        width: 100%;
+        padding: 18px;
+        margin: 25px auto 20px;
+    }
+
+    .mision-portada h3 {
+        font-size: 20px;
+    }
+
+    .mision-portada p {
+        font-size: 16px;
+    }
+
+    .reto-portada {
+        font-size: 18px;
+    }
+
+}
